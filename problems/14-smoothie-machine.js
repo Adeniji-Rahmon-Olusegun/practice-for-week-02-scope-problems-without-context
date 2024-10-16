@@ -25,6 +25,35 @@ console.log(smoothie2("pineapple"));
 
 const smoothieMachine = (...ingredients) => {
   // Your code here
+  let count = 0;
+  let smoothie = "I'm having a smoothie with";
+
+  return function (...otherIngredients) {
+    count += 1;
+
+    if (count === 1 & ingredients.length === 0) {
+        
+        let ingredients2 = otherIngredients.join(" and ");
+        smoothie += ' ' + ingredients2;
+    } else if (count === 1 & ingredients.length > 0) {
+        let ingredients1 = ingredients.join(" and ");
+        let ingredients2 = otherIngredients.join(" and ");
+
+        smoothie += ' ' + ingredients1 + ' and ' + ingredients2;
+    } else if (count > 1 & ingredients.length === 0) {
+      
+        let ingredients2 = otherIngredients.join(" and ");
+
+        smoothie += " and " + ingredients2;
+    } else {
+        let ingredients1 = ingredients.join(" and ");
+        let ingredients2 = otherIngredients.join(" and ");
+
+        smoothie += " and " + ingredients1 + ' and ' + ingredients2;
+    }
+    
+    return smoothie;
+  }
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -25,6 +25,21 @@ console.log(table2(75)); // STILL prints 6
 ***********************************************************************/
 function recVolume(height) {
   // Your code here
+  let count = 1;
+  let volume = height;
+  
+  return (rectSide) => {
+    count += 1;
+
+    if (count <= 3) {
+      volume *= rectSide;
+    }
+
+    if (count >= 3) {
+      return volume;
+    }
+
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
